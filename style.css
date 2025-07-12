@@ -1,0 +1,336 @@
+/* Reset and base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f0f4f8;
+  color: #212121;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+.logo {
+  font-size: 1.6rem;
+  color: #4a90e2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo i {
+  color: #f5a623;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding-left: 0;
+}
+.nav-link {
+  color: #555;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.3rem 0;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #4a90e2;
+  border-bottom-color: #4a90e2;
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+.dark-toggle:hover {
+  color: #4a90e2;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #4a90e2, #7bdbf2);
+  color: white;
+  padding: 6rem 0 4rem;
+  position: relative;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-primary {
+  background-color: #f5a623;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(245, 166, 35, 0.6);
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background-color: #d48806;
+  box-shadow: 0 8px 15px rgba(212, 136, 6, 0.8);
+}
+
+/* Hero wave SVG */
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+  margin-top: -5px;
+  filter: drop-shadow(0 -4px 3px rgba(0,0,0,0.06));
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 4rem 0 6rem;
+  flex-wrap: wrap;
+}
+.feature-card {
+  background: white;
+  flex: 1 1 280px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+.feature-card h3 {
+  margin: 1.5rem 0 1rem;
+  font-weight: 700;
+}
+.feature-card p {
+  color: #666;
+  font-size: 1rem;
+}
+.icon-blue {
+  color: #4a90e2;
+}
+.icon-yellow {
+  color: #f5a623;
+}
+.icon-pink {
+  color: #d36ba3;
+}
+
+/* Video Section */
+.video-section {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+.video-section h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.calm-video {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
+  outline-offset: 3px;
+}
+
+/* Pages (mood, suggestions, peers) */
+.page {
+  display: none;
+  padding-bottom: 4rem;
+}
+.page.active {
+  display: block;
+}
+.page h2 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #4a90e2;
+}
+.page p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Mood Tracker Form */
+#moodForm {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  max-width: 450px;
+  margin-bottom: 2rem;
+}
+#moodForm label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+#moodForm input[type="number"],
+#moodForm textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+#moodForm input[type="number"]:focus,
+#moodForm textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+.feedback {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Mood Chart */
+.mood-chart-container {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 300px;
+}
+
+/* Self-care Suggestions */
+#suggestionText {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+  color: #555;
+  min-height: 2.5rem;
+}
+
+/* Peer Support Form */
+#peerForm {
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+#peerForm textarea {
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s;
+}
+#peerForm textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+.peer-messages {
+  list-style: none;
+  padding-left: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  padding: 1rem 1.5rem;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.peer-messages li {
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-style: italic;
+  color: #444;
+}
+.peer-messages li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+  }
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+  .nav-links {
+    display: none; /* For simplicity - could add mobile menu */
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body.dark-mode {
+    background: #121212;
+    color: #eee;
+  }
+  body.dark-mode .navbar {
+    color: #eee;
+  }
+  body.dark-mode .nav-link,
+  body.dark-mode .nav-link.active {
+    color: #ddd;
+    border-bottom-color: #4a90e2;
+  }
+  body.dark-mode .hero {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ddd;
+  }
+  body.dark-mode .btn-primary {
+    background-color: #f5a623;
+    color: #222;
+  }
+  body.dark-mode .feature-card {
+    background: #1e1e1e;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.9);
+  }
+  body.dark-mode #moodForm,
+  body.dark-mode #peerForm,
+  body.dark-mode .peer-messages {
+    background: #1e1e1e;
+    color: #ddd;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.9);
+  }
+}
